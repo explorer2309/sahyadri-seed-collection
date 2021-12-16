@@ -222,3 +222,7 @@ input:where([type="search"]) {
   list-style-type: none;
   padding: 0.5rem 0;
 }
+
+img {
+  max-width: 100%;
+}
