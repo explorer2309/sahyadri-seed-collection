@@ -17,7 +17,7 @@ export type PlantMarkdownAttributes = {
 
 const plantsPath = path.join(__dirname, "./../../", "plants");
 
-function isValidPostAttributes(
+function isValidPlantAttributes(
   attributes: any
 ): attributes is PlantMarkdownAttributes {
   return attributes?.desiName && attributes?.videsiName;
@@ -30,7 +30,7 @@ export async function getPlantsList() {
       const file = await fs.readFile(path.join(plantsPath, filename));
       const { attributes } = parseFrontMatter(file.toString());
       invariant(
-        isValidPostAttributes(attributes),
+        isValidPlantAttributes(attributes),
         `${filename} has bad meta data!`
       );
       return {
@@ -49,9 +49,23 @@ export async function getPlant(slug: string) {
     file.toString()
   );
   invariant(
-    isValidPostAttributes(attributes),
+    isValidPlantAttributes(attributes),
     `Plant ${filepath} is missing attributes`
   );
   const html = marked(body);
   return { slug, html, desiName: attributes.desiName, videsiName: attributes.videsiName };
+}
+
+
+type NewPlant = {
+  desiName: string;
+  videsiName: string;
+  slug: string;
+  markdown: string;
+};
+
+export async function createPlant(plant: NewPlant) {
+  const md = `---\ndesiName: ${plant.desiName}\nvidesiName: ${plant.videsiName}\n---\n\n${plant.markdown}`;
+  await fs.writeFile(path.join(plantsPath, plant.slug + ".md"), md);
+  return getPlant(plant.slug);
 }

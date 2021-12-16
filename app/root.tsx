@@ -44,13 +44,9 @@ export function ErrorBoundary({ error }: { error: Error }) {
     <Document title="Error!">
       <Layout>
         <div>
-          <h1>There was an error</h1>
+          <h1>Oops! Seems we found an unknown error</h1>
           <p>{error.message}</p>
           <hr />
-          <p>
-            Hey, developer, you should replace this with what you want your
-            users to see.
-          </p>
         </div>
       </Layout>
     </Document>
@@ -105,7 +101,6 @@ function Document({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico?v=2"></link>
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
