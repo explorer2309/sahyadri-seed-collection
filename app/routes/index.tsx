@@ -15,17 +15,17 @@ export let loader: LoaderFunction = () => {
       {
         desiName: "तामण",
         videshiName: "Lagerstromia speciosa",
-        url: "https://remix.run/docs",
+        url: "#",
       },
       {
         desiName: "काटेसावर",
         videshiName: "Bombax ceiba",
-        url: "https://reactrouter.com/docs",
+        url: "#",
       },
       {
         desiName: "सोनसावर/गणेर",
         videshiName: "Cochlospermum religosum",
-        url: "https://discord.gg/VBePs6d",
+        url: "#",
       },
     ],
   };
