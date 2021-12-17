@@ -5,8 +5,8 @@
     }
   },
   "functions": {
-    "*.ts": {
-      "includeFiles": "_*.md"
+    "**/*.ts": {
+      "includeFiles": "**/*.md"
     }
   }
 }
