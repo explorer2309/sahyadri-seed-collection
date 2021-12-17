@@ -8,7 +8,30 @@ import type { Plant } from "./../services/plants-service";
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = () => {
-  return getPlantsList();
+  // return getPlantsList();
+
+  return [
+    {
+      desiName: "तामण",
+      videsiName: "Lagerstromia speciosa",
+      slug: "lagerstromia-speciosa",
+    },
+    {
+      desiName: "काटेसावर",
+      videsiName: "Bombax ceiba",
+      slug: "bombax-ceiba",
+    },
+    {
+      desiName: "सोनसावर/गणेर",
+      videsiName: "Cochlospermum religosum",
+      slug: "cochlospermum-religosum",
+    },
+    {
+      desiName: "पळस",
+      videsiName: "Butea monosperma",
+      slug: "butea-monosperma",
+    },
+  ];
 };
 
 // https://remix.run/api/conventions#meta
@@ -47,7 +70,7 @@ export default function Index() {
         <ul className="plant-list">
           {plants.map((plant) => (
             <li key={plant.slug}>
-              <Link to={`/plants/${plant.slug}`}>
+              <Link to={`/trees/${plant.slug}`}>
                 {plant.desiName} : {plant.videsiName}
               </Link>
             </li>
