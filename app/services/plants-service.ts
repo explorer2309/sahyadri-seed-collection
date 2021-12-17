@@ -15,7 +15,7 @@ export type PlantMarkdownAttributes = {
   videsiName: string;
 };
 
-const plantsPath = path.join(__dirname, "/", "plants");
+const plantsPath = path.join(__dirname, "../../", "plants");
 
 function isValidPlantAttributes(
   attributes: any
