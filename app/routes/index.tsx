@@ -31,6 +31,21 @@ export let loader: LoaderFunction = () => {
       videsiName: "Butea monosperma",
       slug: "butea-monosperma",
     },
+    {
+      desiName: "आपटा",
+      videsiName: "Bauhinia Racemosa",
+      slug: "bauhinia-racemosa",
+    },
+    {
+      desiName: "सागरगोटा",
+      videsiName: "Caesalpinia Bonduc",
+      slug: "caesalpinia-bonduc",
+    },
+    {
+      desiName: "फणशी",
+      videsiName: "Dalbergia Lanceolaria",
+      slug: "dalbergia-lanceolaria",
+    },
   ];
 };
 
